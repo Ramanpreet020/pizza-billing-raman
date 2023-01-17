@@ -4,11 +4,20 @@ public class Pizza {
 
     private int price;
     private Boolean isVeg;
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     private String bill;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
-        // your code goes here
+        if(isVeg){
+            price =300;
+        }else{
+            price = 400;
+        }
     }
 
     public int getPrice(){
@@ -17,14 +26,21 @@ public class Pizza {
 
     public void addExtraCheese(){
         // your code goes here
+        price+=80;
     }
 
     public void addExtraToppings(){
         // your code goes here
+        if(isVeg){
+            price+=70;
+        }else{
+            price+=120;
+        }
     }
 
     public void addTakeaway(){
-        // your code goes here
+        price+=20;
+        bill = String.valueOf(price);
     }
 
     public String getBill(){
